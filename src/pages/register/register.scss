@@ -1,0 +1,105 @@
+.register {
+    width: 100vw;
+    height: 100vh; 
+    background-color: rgb(193, 190, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .card {
+        background-color: white;
+        display: flex;
+        width: 50%;
+        height: 600px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .left {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+
+            h1 {
+                color: #555;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid lightgray;
+                    padding: 20px 10px;
+                    border-radius: 6px;
+
+                    &::placeholder {
+                        color: gray;
+                    }
+                }
+
+                button {
+                    width: 50%;
+                    border: none;
+                    background-color: rgb(155, 106, 246);
+                    color: white;
+                    padding: 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        .right {
+            flex: 1;
+            padding: 30px;
+            background: 
+                linear-gradient(rgba(39, 11, 96, 0.524), rgba(39, 11, 96, 0.607)),
+                url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600");
+            background-position: center;
+            object-fit: cover;
+            background-size: cover;
+            color: white;  
+            display: flex;
+            flex-direction: column;
+            gap: 50px;  
+
+            h1 {
+                font-size: 80px;
+                line-height: 100px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            span {
+                cursor: pointer;
+                font-size: 14px;
+
+                &:hover {
+                    color: whitesmoke
+                }
+            }
+
+            button {
+                font-weight: bold;
+                background-color: white;
+                border: none;
+                width: 50%;
+                padding: 10px 20px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: whitesmoke;
+                }
+            }
+        }
+
+    }
+}
