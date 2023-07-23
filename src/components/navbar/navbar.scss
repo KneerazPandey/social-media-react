@@ -1,67 +1,80 @@
+@import "../../style.scss";
+
 .navbar {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    height: 60px;
-    border-bottom: 1px solid lightgray;
-    position: sticky;
-    top: 0;
-    
-    .left {
+    @include themify($themes) {
+        background-color: themed('bg');
         display: flex;
-        gap: 22px;
+        justify-content: space-between;
         align-items: center;
-
-        span {
-            font-weight: bold;
-            font-size: 20px;
-            cursor: pointer;
-            color: rgb(39, 17, 232);
-        }
-
-        .search {
+        padding: 10px 20px;
+        height: 60px;
+        border-bottom: 1px solid themed('border');
+        position: sticky;
+        top: 0;
+        color: themed('textColor');
+        z-index: 999;
+        
+        .left {
             display: flex;
+            gap: 22px;
             align-items: center;
-            gap: 9px;
-            border: 1px solid lightgray;
-            padding: 4px 5px;
-            border-radius: 4px; 
 
-            input {
-                border: none;
-                width: 500px;
-                
-                &:focus {
-                    outline: none;
+            span {
+                font-weight: bold;
+                font-size: 20px;
+                cursor: pointer;
+                color: themed('logo');
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                border: 1px solid themed('border');
+                padding: 4px 5px;
+                border-radius: 4px; 
+
+                input {
+                    border: none;
+                    width: 500px;
+                    background-color: transparent;
+                    color: themed('textColor');
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: themed('textColorSoft');
+                    }
                 }
             }
         }
-    }
 
-    .right {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-
-        .user {
+        .right {
             display: flex;
+            gap: 20px;
             align-items: center;
-            gap: 6px;
-            font-weight: 500;
 
-            img {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                object-fit: cover;
-                cursor: pointer;
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-weight: 500;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
             }
         }
-    }
 
-    .icon {
-        cursor: pointer;
+        .icon {
+            cursor: pointer;
+            color: themed('textColor');
+        }
     }
 }

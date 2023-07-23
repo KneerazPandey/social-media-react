@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext';
 import './login.scss';
 
 const Login = () => {
+  const nameRefContainer = useRef(null);
+  const passwordRefContainer = useRef(null);
+  const { login } = useContext(AuthContext);
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+    login();
+  }
+
   return (
     <div className='login'>
         <div className="card">
@@ -17,9 +27,9 @@ const Login = () => {
           <div className="right">
             <h1>Login</h1>
             <form method='post'>
-              <input type="text" name="name" placeholder='Username' />
-              <input type="password" name="password" placeholder='Password' />
-              <button type="submit">Login</button>
+              <input type="text" name="name" placeholder='Username' ref={nameRefContainer} />
+              <input type="password" name="password" placeholder='Password' ref={passwordRefContainer} />
+              <button type="submit" onClick={loginHandler}>Login</button>
             </form>
           </div>
         </div>
